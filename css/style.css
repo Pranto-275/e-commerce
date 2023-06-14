@@ -1,0 +1,344 @@
+*{
+    font-family: 'Poppins'', sans-serif';
+}
+
+/*navbar start */
+header #nav_bar .navbar_color{
+ 
+    background: transparent ;
+    transition: .5s ease-out;
+}
+header #nav_bar li{
+    padding: 12px;
+    padding-left: 25px;
+}
+
+header #nav_bar li a{
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    padding: 5px 0px;
+}
+
+
+.navbar_color.scrolled {
+    background: white !important;
+   
+}
+
+
+.carouset_caption_mod{
+
+    position: absolute;
+    left: 0;
+    width: 50%;
+    top: 50%;
+    font-family: 'PlayfairDisplay-Bold';
+    color: black;
+}
+
+
+.carousel .carousel-item {
+    height: 580px;
+  }
+  
+  .carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+      min-height: 500px;
+  }
+
+
+  .shopping_btn{
+        width: 150px;
+        height: 50px;
+        background-color: darkblue;
+        color: white;
+        border-radius: 15px;
+  }
+  
+  .shopping_btn:hover{
+    background-color: white;
+    color: darkblue;
+    border-radius: 15px;
+    transition: 0.4s;
+   
+}
+
+.overlay_cat{
+    position: relative;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #8c7ae6;
+    color: white;
+  }
+  
+
+.overlay_cat:hover .overlay {
+  opacity: 0.7;
+}
+
+
+.overlay_cat .text {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+
+}
+
+.overlay_cat .text span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.overlay_cat .text p {
+    color: black; 
+    font-size: 18px;
+}
+
+.overlay_cat:hover .text{
+    color: white;
+}
+
+.overlay_cat:hover p{
+    color: white;
+}
+
+
+#product_menu .filter_button{
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    color: #888;
+    margin-left: 20px;
+   
+}
+
+
+
+
+ #product_menu .active_class{
+    color: black;
+    border-bottom: 1px solid black;
+
+ }
+
+
+ .card {
+
+    width: 40%;
+    overflow: hidden;
+    margin: 0 auto;
+    transition: 0.5s all ease-in-out;
+  }
+
+  .card img {
+    transition: 0.5s all ease-in-out;
+  }
+  
+  .card:hover img {
+    transform: scale(1.1);
+    transition: 0.7s all ease-in-out;
+  }
+  
+  .product_container {
+    padding: 2px 16px;
+  }
+
+
+
+
+#products .product_info{
+    padding: 20px;
+    
+}
+
+
+.modal_product .product_box{
+    width: 100%;
+    height: 500px;
+    background-color: #ecf0f1;
+    padding: 30px;
+}
+
+.add_cart{
+    width: 150px;
+    height: 50px;
+    background-color: rgb(96, 197, 225);
+    color: white;
+    border-radius: 15px;
+    font-weight: 600;
+
+}
+.add_cart:hover{
+    background-color: black;
+    color: white;
+}
+
+
+#footer a{
+    text-decoration: none;
+    color: #b2b2b2;
+}
+
+#footer p{
+    color: #b2b2b2;
+}
+
+
+#footer a:hover{
+   
+    color: rgb(96, 197, 225);
+}
+
+
+#blog{
+      
+       background: url('https://preview.colorlib.com/theme/cozastore/images/blog-06.jpg.webp') no-repeat center top;
+       background-size: cover;
+       min-height: 250px;
+       background-attachment: fixed;
+       margin-top: 80px;
+}
+
+
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+
+#blog_line .search_item{
+    font-weight: 500;
+    font-size: large;
+    color: #888;
+}
+
+
+#blog_line .search_item div:hover{
+    color: rgb(96, 197, 225);
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+}
+.date_text{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+.image img{
+    transition: 0.5s all ease-in-out;
+}
+
+
+.image:hover img{
+    transform: scale(1.1);
+    transition: 0.7s all ease-in-out;
+}
+
+
+ 
+
+#blog_line a{
+    text-decoration: none;
+    color: gray;
+}
+
+
+
+#blog_line a:hover{
+   
+    color: rgb(96, 197, 225);
+}
+
+
+
+
+#about{
+      
+    background: url('https://preview.colorlib.com/theme/cozastore/images/blog-06.jpg.webp') no-repeat center top;
+    background-size: cover;
+    min-height: 250px;
+    background-attachment: fixed;
+    margin-top: 80px;
+}
+
+
+
+#contact{
+      
+    background: url('https://preview.colorlib.com/theme/cozastore/images/blog-06.jpg.webp') no-repeat center top;
+    background-size: cover;
+    min-height: 250px;
+    background-attachment: fixed;
+    margin-top: 80px;
+}
+
+
+.input_form{
+    padding: 50px;
+}
+
+.input_form .submit_btn{
+ background-color:  rgb(96, 197, 225);;
+ width: 100%;
+ height: 50px;
+ color: white;
+ border-radius: 50px;
+}
+
+
+#checkout{
+    font-family: 'PlayfairDisplay-Bold';
+
+}
+
+
+
+
+
+.proceed_cart{
+    width: 300px;
+    height: 50px;
+    background-color: rgb(96, 197, 225);
+    color: white;
+    border-radius: 15px;
+    font-weight: 600;
+
+}
+.proceed_cart:hover{
+    background-color: black;
+    color: white;
+}

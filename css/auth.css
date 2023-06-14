@@ -1,0 +1,48 @@
+#register{
+    background: url('../img/login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+#register .register_overlay{
+    background-color: rgba(0,0,0,0.5);
+    height: 800px;
+}
+#register .register_box{
+        background-color: rgba(255,255,255,0.5);
+        width: 400px;
+        margin: 0 auto;
+        padding: 25px;
+        border-radius: 10px;
+       
+}
+
+.form_padding{
+    padding-top: 100px;
+}
+
+
+#login{
+    background: url('../img/login.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 800px;
+}
+
+
+#login .login_overlay{
+    background-color: rgba(0,0,0,0.5);
+    height: 800px;
+}
+
+
+#login .login_box{
+    background-color: rgba(255,255,255,0.5);
+    width: 400px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 10px;
+   
+}
