@@ -57,6 +57,7 @@ header #nav_bar li a{
         background-color: darkblue;
         color: white;
         border-radius: 15px;
+        text-align: center;
   }
   
   .shopping_btn:hover{
@@ -342,3 +343,4 @@ header #nav_bar li a{
     background-color: black;
     color: white;
 }
+
