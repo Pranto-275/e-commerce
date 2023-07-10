@@ -1,3 +1,12 @@
+<?php
+global $connection;
+include 'db/connection.php';
+session_start();
+$message = '';
+$user_name = $_SESSION['username'];
+
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -16,52 +25,8 @@
 
 <body>
   <header>
-    <div id="nav_bar">
-      <nav class="navbar navbar-expand-lg navbar_color fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#"><img src="img/navbar_logo.png" alt="" width="89" height="40"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Shop</a>
-              </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="#">Feature</a>
-              </li> -->
-              <li class="nav-item">
-                <a class="nav-link" href="#">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-
-            </ul>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass fa-lg"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-regular fa-heart fa-lg"></i></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <?php require 'navbar.php' ?>
+    <?php include 'offcanvas.php'?>
 
   </header>
 
@@ -97,7 +62,7 @@
           </div>
           <div class="d-flex flex-column">
            <div>
-           <h4> Address</h5>
+           <h4> Address</h4>
            </div>
            <div style="font-size: 16px;">
             Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
@@ -111,7 +76,7 @@
           </div>
           <div class="d-flex flex-column">
            <div>
-           <h4> Lets Talk</h5>
+           <h4> Lets Talk</h4>
            </div>
            <div style="font-size: 16px;">
             01830445326
@@ -126,7 +91,7 @@
           </div>
           <div class="d-flex flex-column">
            <div>
-           <h4> Sale Support</h5>
+           <h4> Sale Support</h4>
            </div>
            <div style="font-size: 16px;">
            pranto.rahaman38@gmail.com
@@ -209,11 +174,12 @@
   <!-- <script src="js/uikit.min.js"></script>
     <script src="js/uikit-icons.min.js"></script> -->
   <script src="js/isotope.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+    notification()
     $(window).scroll(function () {
       $('nav').toggleClass('scrolled', $(this).scrollTop() > 50);
     });
-
 
 
     // init Isotope
@@ -223,7 +189,7 @@
     // filter items on button click
     $('.filter-button-group').on('click', 'button', function () {
       var filterValue = $(this).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
+      $grid.isotope({filter: filterValue});
     });
 
 
@@ -235,13 +201,83 @@
       });
     });
 
+    function getProdcutid(id) {
+      let product_id = id;
+      $.ajax({
+        method: "POST",
+        url: "ajax.php",
+        data: {
+          code: 111,
+          product_id: product_id
+
+        }, success: function (data) {
+          let showdata = JSON.parse(data);
+          $("#product_id").val(showdata.id);
+          $("#product_name").html(showdata.p_name);
+          $("#product_des").html(showdata.product_des);
+          $("#product_image").attr("src", showdata.image);
+          $("#product_price").html(showdata.price);
 
 
+        }
+      })
+
+    }
 
 
+    let i = 1;
+
+    function itemIncress() {
+      $("#item_qty").html(++i);
+    }
+
+
+    function itemDicress() {
+      if (i >= 1) {
+        $("#item_qty").html(--i);
+      }
+
+    }
+
+
+    function addCart() {
+      let product_id =  $("#product_id").val();
+      let product_quantity = $("#item_qty").html();
+      let quantity = parseInt(product_quantity);
+
+      $.ajax({
+        method: "POST",
+        url: "ajax.php",
+        data: {
+          code: 112,
+          product_id: product_id,
+          quantity:quantity
+
+        },
+        success: function (data) {
+          let message = data;
+          notification()
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: message,
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      })
+
+
+    }
 
 
   </script>
 </body>
 
 </html>
+
+
+<?php
+
+mysqli_close($connection);
+?>

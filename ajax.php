@@ -45,7 +45,6 @@ if ($_POST['code'] == 113){
 
 if ($_POST['code'] == 114){
 
-
     $side_nav_product = "SELECT * FROM products p, cart c WHERE p.id = c.product_id AND c.user_id = '$user_id'";
     $side_nav_product_result = mysqli_query($connection,$side_nav_product);
 
@@ -54,5 +53,70 @@ if ($_POST['code'] == 114){
         array_push($arr,$row);
     }
     echo json_encode($arr);
+
+}
+
+
+if ($_POST['code'] == 115){
+
+
+    $cart_product = "SELECT * FROM products p, cart c WHERE p.id = c.product_id AND c.user_id = '$user_id'";
+    $cart_product_result = mysqli_query($connection,$cart_product);
+
+    $arr = [];
+    while ($row = mysqli_fetch_assoc($cart_product_result)){
+        array_push($arr,$row);
+    }
+    echo json_encode($arr);
+
+}
+
+if ($_POST['code'] == 116){
+
+    $cart_id = $_POST['cart_id'];
+
+    $delete_cart_product = "DELETE FROM cart WHERE id = '$cart_id'";
+    $delete_cart_product_result = mysqli_query($connection,$delete_cart_product);
+    echo "Successfully Deleted";
+
+
+}
+
+
+if ($_POST['code'] == 117){
+
+    $cart_array = $_POST['cart_array'];
+    $linee_id = $_POST['linee_id'];
+
+    for($i=0;$i<count($cart_array);$i++){
+       $cart_update = "UPDATE cart SET qty = '$cart_array[$i]' WHERE id = '$linee_id[$i]' AND user_id = '$user_id'";
+      $cart_update_result =  mysqli_query($connection,$cart_update);
+      if ($cart_update_result == 'ture'){
+          echo "true";
+      }else{
+          echo "false";
+      }
+
+    }
+
+
+
+}
+
+if ($_POST['code'] == 118){
+
+
+
+
+      echo  $cart_delete = "DELETE FROM cart WHERE user_id = '$user_id'";
+        $cart_delete_result =  mysqli_query($connection,$cart_delete);
+        if ($cart_delete_result == 'ture'){
+            echo "true";
+        }else{
+            echo "false";
+        }
+
+
+
 
 }

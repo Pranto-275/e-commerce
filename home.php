@@ -6,8 +6,6 @@ $message = '';
 $user_name = $_SESSION['username'];
 
 
-$prduct_list = "SELECT * FROM products";
-$prduct_list_reuslt = mysqli_query($connection, $prduct_list);
 
 
 ?>
@@ -55,7 +53,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
                             <p class="display-4 animate__animated animate__fadeInLeftBig" style="font-weight: 600;">
                                 JACKETS & COATS
                             </p>
-                            <a type="button" href="shop.html"
+                            <a type="button" href="shop.php"
                                class="btn shopping_btn animate__animated animate__fadeInUpBig">SHOP</a>
                         </div>
                     </div>
@@ -68,7 +66,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
                                 Collection 2018</h3>
                             <p class="display-4 animate__animated animate__fadeInLeftBig" style="font-weight: 600;">NEW
                                 ARRIVALS</p>
-                            <a type="button" href="shop.html"
+                            <a type="button" href="shop.php"
                                class="btn shopping_btn animate__animated animate__fadeInUpBig">SHOP</a>
                         </div>
                     </div>
@@ -81,7 +79,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
                                 New-Arrivals</h3>
                             <p class="display-4 animate__animated animate__fadeInLeftBig" style="font-weight: 600;">NEW
                                 ARRIVALS</p>
-                            <a type="button" href="shop.html"
+                            <a type="button" href="shop.php"
                                class="btn shopping_btn animate__animated animate__fadeInUpBig">SHOP</a>
                         </div>
                     </div>
@@ -100,35 +98,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
         </div>
 
 
-        <!-- cart offcanvas -->
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasRightLabel">Your Cart</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-                <div class="fea_product py-1">
-
-
-                </div>
-
-
-                <div class="total" style="padding:50px ;" >
-                    <h5>TOTAL: <span id="total_amount"></span> BDT</h5>
-                </div>
-
-                <div style="padding-top: 10px;">
-                    <a href="cart.html" class="btn add_cart">View Cart</a>
-                    <button class="btn add_cart">Checkout</button>
-                </div>
-
-
-            </div>
-        </div>
-
-        <!-- cart of canvas -->
-
+        <?php include 'offcanvas.php'?>
 
     </header>
 
@@ -136,7 +106,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
     <section id="banner" class="p-4" style="padding: 80px;">
         <div class="row">
             <div class="col-12 col-md-4 p-4 ">
-                <a href="shop.html">
+                <a href="shop.php">
                     <div class="border overlay_cat">
 
                         <img src="https://preview.colorlib.com/theme/cozastore/images/banner-01.jpg.webp" alt=""
@@ -153,7 +123,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
                 </a>
             </div>
             <div class="col-12 col-md-4 p-4">
-                <a href="shop.html">
+                <a href="shop.php">
                     <div class="border overlay_cat">
 
                         <img src="https://preview.colorlib.com/theme/cozastore/images/banner-02.jpg.webp" alt=""
@@ -169,7 +139,7 @@ $prduct_list_reuslt = mysqli_query($connection, $prduct_list);
                 </a>
             </div>
             <div class="col-12 col-md-4 p-4">
-                <a href="shop.html">
+                <a href="shop.php">
                     <div class="border overlay_cat">
 
                         <img src="https://preview.colorlib.com/theme/cozastore/images/banner-03.jpg.webp" alt=""

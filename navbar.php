@@ -6,6 +6,8 @@ if (!$_SESSION['username']){
     header('Location:login.php');
 }
 
+$prduct_list = "SELECT * FROM products";
+$prduct_list_reuslt = mysqli_query($connection, $prduct_list);
 
 
 
@@ -33,13 +35,13 @@ if (!$_SESSION['username']){
                       <a class="nav-link" href="#">Feature</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.php">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
 
                 </ul>
